@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Project listing</h1>
+  {% for project in projects %}
+    <div class="row" style="width: 100%;">
+      <div class="col-md-6" style="text-align: right"><a href="{{ url_for('.edit_project', id=project.id) }}">{{ project.name }}</a></div>
+      <div class="col-md-6" style="text-align: left"></div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

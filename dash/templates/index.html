@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div>
+    {% if current_user.is_authenticated %}
+        Hello {{ current_user.email }}! <a href="{{ url_for('security.logout') }}">Logout</a><br><br>
+    {% else %}
+        <br><br>
+        Please either <a href="{{ url_for('security.login') }}">Login</a> or <a href="{{ url_for('security.register') }}">Register</a>
+        <br><br>
+    {% endif %}
+</div>
+<div>
+    <a href="{{ url_for('admin.index') }}">Admin Panel</a>
+</div>
+{% endblock %}

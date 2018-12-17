@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+  {{ emit_event("tmpl_before_content") }}
+
+  <div class="container">
+    <br><br>
+    {% for plugin in plugins %}
+    <div class="row">
+      <div class="col-md-6" style="text-align: left">
+        <strong>{{ plugin.name }}</strong> by {{ plugin.author }} <br>
+        <strong>Description: </strong><i>{{ plugin.description }}</i><br>
+        <strong>License: </strong>{{ plugin.license }}<br>
+        <strong>Path: </strong>{{ plugin.path }}<br>
+        <br>
+      </div>
+      <div class="col-md-6" style="text-align: left">
+        <a href="{{ url_for('disable', plugin=plugin.identifier) }}">Disable</a> <br>
+        <a href="{{ url_for('enable', plugin=plugin.identifier) }}">Enable</a>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}

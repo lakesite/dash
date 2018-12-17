@@ -1,0 +1,7 @@
+.env
+__pycache__
+*.sqlite
+.vagrant
+instance
+*-console.log
+*.cfg

@@ -1,0 +1,21 @@
+[keys]
+SECRET_KEY = notsecret
+SECURITY_PASSWORD_SALT = notsecret2
+
+[mail]
+MAIL_SERVER = smtp.gmail.com
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+
+# mail authentication
+MAIL_USERNAME = youremail@gmail.com
+MAIL_PASSWORD = your-gmail-token
+
+# mail sender
+MAIL_DEFAULT_SENDER = prod@example.org
+
+[db]
+# the database URL is specified as follows:
+# dialect+driver://username:password@host:port/database
+SQLALCHEMY_DATABASE_URI = mysql+pymysql://
