@@ -54,6 +54,7 @@ class BaseConfig(object):
     SECURITY_CONFIRMABLE = True
     SECURITY_RECOVERABLE = True
 
+    EXPLAIN_TEMPLATE_LOADING = True
 
 class DevelopmentConfig(BaseConfig):
     """Development configuration."""

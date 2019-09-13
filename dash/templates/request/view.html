@@ -1,0 +1,24 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>View Request</h1>
+
+  <div class="row" style="width: 100%;">
+    <div class="col-md-2" style="text-align: right">Title:</div>
+    <div class="col-md-10" style="text-align: left">{{ request.title }}</div>
+  </div>
+  <div class="row" style="width: 100%;">
+    <div class="col-md-2" style="text-align: right">Requested on:</div>
+    <div class="col-md-10" style="text-align: left">{{ request.requested_on }}</div>
+  </div>
+  <div class="row" style="width: 100%;">
+    <div class="col-md-2" style="text-align: right">Status:</div>
+    <div class="col-md-10" style="text-align: left">{{ request.status }}</div>
+  </div>
+  <div class="row" style="width: 100%;">
+    <div class="col-md-2" style="text-align: right">Request:</div>
+    <div class="col-md-10" style="text-align: left">{{ request.request }}</div>
+  </div>
+</div>
+{% endblock %}

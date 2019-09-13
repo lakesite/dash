@@ -1,0 +1,39 @@
+[lakespace]
+desktop = "5"
+
+[dash]
+offset = "3871,85"
+resize = "1597,1000"
+browser = "firefox"
+tabs = [
+  "https://github.com/lakesite/dash/",
+  "https://lakesite.slack.com/messages/CEJG3BD2B/",
+  "http://localhost:5000/",
+  "http://localhost:8000/admin",
+]
+
+[docs]
+offset = "245,87"
+resize = "1605,993"
+browser = "firefox"
+tabs = [
+  "https://github.com/realpython/flask-registration/blob/master/project/config.py",
+  "https://github.com/mattupstate/flask-security-example/blob/master/templates/base.html",
+  "https://github.com/mattupstate/flask-security/tree/develop/flask_security",
+  "https://pythonhosted.org/Flask-Security/configuration.html",
+  "https://gist.github.com/skyuplam/ffb1b5f12d7ad787f6e4",
+]
+
+[terminal_1]
+offset = "1930,64"
+resize = "960,1026"
+working_directory = "/home/andy/projects/lakesite/dash"
+command_1 = "vagrant up"
+command_2 = "ls"
+command_3 = "ls"
+
+[ide]
+offset = "2890,64"
+resize = "960,1026"
+editor = "atom"
+project_directory = "."

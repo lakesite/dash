@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Requests</h1>
+
+  <div class="row" style="width: 100%;">
+    <div class="col-md-8" style="text-align: left">Title</div>
+    <div class="col-md-8" style="text-align: left">Request</div>
+    <div class="col-md-2" style="text-align: left">Date</div>
+    <div class="col-md-2" style="text-align: left">Status</div>
+  </div>
+
+  {% for request in requests %}
+    <div class="row" style="width: 100%;">
+      <div class="col-md-8" style="text-align: left"><a href="{{ url_for('request_bp.view_request', id=request.id) }}">{{ request.title }}</a></div>
+      <div class="col-md-8" style="text-align: left">{{ request.request[:50] }}</div>
+      <div class="col-md-2" style="text-align: left">{{ request.requested_on }}</div>
+      <div class="col-md-2" style="text-align: left">{{ request.status }}</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

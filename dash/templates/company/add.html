@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Create a new Company</h1>
+  <div>
+    Please provide the following basic information about your company.  If the company already exists in our system,
+    please request to join an existing company by name <a href="">here</a>.
+  </div>
+  <br>
+  {% include "_form/generic.html" %}
+</div>
+{% endblock %}

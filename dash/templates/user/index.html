@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+{% from "_report/_macros.html" import report_row %}
+
+
+{% block content %}
+<div class="container">
+  <h1>User profile</h1>
+  {% if current_user.company is none %}
+    <div class="row" style="width: 100%;">
+      <div class="col-md-12" style="text-align: right">Let's start by creating a company profile for you.
+        If the company already exists,a request will be generated to have you added to the company profile.
+      </div>
+    </div>
+  {% endif %}
+  {{ report_row('Email', current_user.email) }}
+
+</div>
+{% endblock %}

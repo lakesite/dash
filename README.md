@@ -37,7 +37,7 @@ If running locally and not using vagrant:
     $ (.env) ./manage.py runserver
 
     Then view @ http://localhost:5000/
-    admin user/pass: admin/password123
+    admin user/pass: dash@lakesite.net / dash
 
 ## Dependencies ##
 

@@ -40,11 +40,13 @@
           <div class="collapse navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li><a href="/service/" class="">Services</a></li>
-              <li><a href="/project/" class="">Projects</a></li>
-              <li><a href="/article/" class="">Articles</a></li>
-              <li><a href="/about/" class="">About</a></li>
-              <li><a href="/contact/" class="">Contact</a></li>
+              <li><a href="https://lakesite.net/" class="">Lakesite.Net</a></li>
+              {% if current_user.is_authenticated %}
+              <li><a href="{{ url_for('user_bp.user_profile') }}">User Profile</a></li>
+              <li><a href="{{ url_for('company_bp.index_company') }}">Company Profile</a></li>
+              <li><a href="{{ url_for('project_bp.index_project') }}">Projects</a></li>
+              <li><a href="{{ url_for('request_bp.index_request') }}">Requests</a></li>
+              {% endif %}
             </ul>
           </div>
       </div>
@@ -59,7 +61,7 @@
       </div>
     {% endif %}
   {% endwith %}
-    
+
   {% block content %}{% endblock %}
 
   <footer>
@@ -67,32 +69,17 @@
       <div class="row" style="width: 100%; border: 1px solid #fff;">
         <div class="col-md-2">
           <br>
-          <div class="footertext">
-            <h4>Company</h4>
-            <a href="/about/">About</a><br>
-            <a href="/contact/">Contact</a><br>
-            <a href="/welcome/">Welcome</a><br>
-            <a href="https://lakesite.slack.com/">Slack</a><br>
+          <div class="footertext">&nbsp;
           </div>
         </div>
         <div class="col-md-2">
           <br>
-          <div class="footertext">
-            <h4>Services</h4>
-            <a href="/service/software_engineering/">Software engineering</a><br>
-            <a href="/service/consulting/">Consulting</a><br>
-            <a href="/service/process_automation/">Process automation</a><br>
-            <a href="/service/api_bots/">APIs and bots</a><br>
+          <div class="footertext">&nbsp;
           </div>
         </div>
         <div class="col-md-2">
           <br>
-          <div class="footertext">
-            <h4>Projects</h4>
-            <a href="/project/lakespace/">Lakespace</a><br>
-            <a href="/project/dash/">Dash</a><br>
-            <a href="/project/zefram/">Zefram</a><br>
-            <a href="/project/linksync/">LinkSync</a><br>
+          <div class="footertext">&nbsp;
           </div>
         </div>
         <div class="col-md-2">

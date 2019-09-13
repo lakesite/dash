@@ -32,52 +32,59 @@ def create_db(default_data=True, sample_data=False):
 
 
 @manager.command
-def create_admin():
-	"""Creates the admin user."""
-	admin_login = prompt("Provide a login name")
-	admin_email = prompt("Provide an email")
-	admin_password = prompt("Provide a password")
-	db.session.add(User(
-		login=admin_login,
-	    email=admin_email,
-	    password=admin_password,
-	    admin=True,
-	    confirmed=True,
-	    confirmed_on=datetime.datetime.now())
-	)
-	db.session.commit()
+def create_admin(email=None, password=None):
+    """Creates the admin user."""
+    if email is None:
+        admin_email = prompt("Provide an email")
+    else:
+        admin_email = email
+
+    if password is None:
+        admin_password = prompt("Provide a password")
+    else:
+        admin_password = password
+
+    db.session.add(User(
+        email=admin_email,
+        password=admin_password,
+        admin=True,
+        active=True,
+        roles='admin',
+        confirmed_at=datetime.datetime.now())
+    )
+    db.session.commit()
 
 
 @manager.command
 def create_user():
-	"Creates a normal user"
-	user_login = prompt("Provide a login name")
-	user_email = prompt("Provide an email")
-	user_password = prompt("Provide a password")
-	db.session.add(User(
-		login=user_login,
-	    email=user_email,
-	    password=user_password,
-	    admin=False,
-	    confirmed=False,
-	))
-	db.session.commit()
+    "Creates a normal user"
+    user_login = prompt("Provide a login name")
+    user_email = prompt("Provide an email")
+    user_password = prompt("Provide a password")
+    db.session.add(User(
+        login=user_login,
+        email=user_email,
+        password=user_password,
+        admin=False,
+        confirmed=False,
+    ))
+    db.session.commit()
 
 
 @manager.command
 def create_project():
-	"Creates a project"
-	project_name = prompt("What name do you want for the project?")
-	db.session.add(Project(
-		name=project_name
-	))
-	db.session.commit()
+    "Creates a project"
+    project_name = prompt("What name do you want for the project?")
+    db.session.add(Project(
+        name=project_name
+    ))
+    db.session.commit()
 
 
 if __name__ == "__main__":
-	with app.app_context():
-		db.init_app(current_app)
-		db.app = current_app
-		print("Using app instance: {} and db with engine: {}".format(current_app, db))
+    with app.app_context():
+        db.init_app(current_app)
+        db.app = current_app
+        print("Using app instance: {} and db with engine: {}".format(current_app, db))
 
-		manager.run()
+        manager.run()
