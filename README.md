@@ -14,6 +14,10 @@ Currently a draft with plugin layouts.
     $ source .env/bin/activate
     $ (.env) pip install -r requirements.txt
 
+Make sure you edit and save one of the development or production config files,
+in the config directory, without .example.  You don't have to do this, but it's
+required for mail.
+
 ## Running ##
 
 If you're using vagrant, simply issue:
