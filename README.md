@@ -40,8 +40,8 @@ If running locally and not using vagrant:
 
     $ (.env) ./manage.py runserver
 
-    Then view @ http://localhost:5000/
-    admin user/pass: dash@lakesite.net / dash
+Then view @ http://localhost:5000/
+admin user/pass: dash@lakesite.net / dash
 
 ## Dependencies ##
 
@@ -70,6 +70,16 @@ Detect changes to db schema:
 Apply migrations:
 
     $ (.env) ./manage.py db upgrade
+
+## Docker ##
+
+To build a container image, dashimage:
+
+  # docker build -t dashimage ./
+
+To run the dash app in dashimage:
+
+  # docker run -d -p 8080:80 -e MODULE_NAME="manage" -e APP_SETTINGS="dash.config.DevelopmentConfig" dashimage
 
 ## WIP ##
 
